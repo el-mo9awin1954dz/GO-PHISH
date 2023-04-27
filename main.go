@@ -5,6 +5,7 @@ import (
 	"github.com/mattn/go-gtk/gtk"
 	"github.com/mattn/go-webkit/webkit"
 )
+// YOU CAN SETU A PHISHING HTTP(S) SERVER YOU CAN ALSO ADD ICON AS A FAKE BROWSER 
 
 const HTML_STRING = `
 <!DOCTYPE html>
@@ -12,32 +13,32 @@ const HTML_STRING = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <img src="./rocket.png" alt="rocket" class="rocket">
+        <img src="rocket.png" alt="rocket" class="rocket">
         <div class="text">
             <h1>LOGIN</h1>
             <p>LANDING PAGE</p>
         </div>
         <form  class="form">
             <div class="animated-input">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
+                <input type="text" placeholder="UUSERNAME">
+                <input type="password" placeholder="PASSWORD">
             </div>
             <div class="check">
                 <div>
                     <input type="checkbox" id="check">
                     <label for="check" class="disc"></label>
-                    <label for="check" class="remember">Remember</label>
+                    <label for="check" class="remember">REMEMBER</label>
                 </div>
                 <p class="forget"><a href="#">Forget Password ?</a></p>
             </div>
         </form>
         <button class="btn" type="submit">LOGIN</button>
-        <p class="account"><a href="#">Create Account ?</a></p>
+        <p class="account"><a href="#">CREATE ACCOUNT ?</a></p>
     </div>
 </body>
 </html>
@@ -52,13 +53,14 @@ const IFRAME_EMBED = `
 func main() {
 	gtk.Init(nil)
 	window := gtk.NewWindow(gtk.WINDOW_TOPLEVEL)
-	window.SetTitle("webkit")
+	window.SetTitle("PHISHING REDTEAM")
 	window.Connect("destroy", gtk.MainQuit)
 
 	vbox := gtk.NewVBox(false, 1)
 
 	entry := gtk.NewEntry()
-	entry.SetText("http://golang.org/")
+	url := os.Args[1]
+	entry.SetText(url)
 	vbox.PackStart(entry, false, false, 0)
 
 	swin := gtk.NewScrolledWindow(nil, nil)
